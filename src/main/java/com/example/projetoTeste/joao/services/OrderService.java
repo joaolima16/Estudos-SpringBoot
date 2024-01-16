@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.example.projetoTeste.joao.Repositories.OrderRepository;
 import com.example.projetoTeste.joao.entities.Order;
-import com.example.projetoTeste.joao.entities.User;
 
 @Service
 public class OrderService {
@@ -25,7 +24,7 @@ public class OrderService {
         return order.get();
     }
 
-    public Order addUser(Order _order) {
+    public Order addOrder(Order _order) {
         _OrderRepository.save(_order);
         return _order;
     }

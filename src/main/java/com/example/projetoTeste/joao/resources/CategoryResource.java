@@ -9,31 +9,30 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.projetoTeste.joao.entities.Order;
-import com.example.projetoTeste.joao.services.OrderService;
+import com.example.projetoTeste.joao.entities.Category;
+import com.example.projetoTeste.joao.services.CategoryService;
 
 @RestController
-@RequestMapping(value = "/orders")
-public class OrderResource {
-  
+@RequestMapping(value = "/categories")
+public class CategoryResource {
     @Autowired
-    private OrderService _OrderService;
-    
+    private CategoryService _CategoryService;
+
     @GetMapping
     public void findAll() {
-    //     Order o1 = new Order(null, Instant.parse("2019-06-20T19:53:07Z"), null);
-    //     return ResponseEntity.ok().body(o1);
+        // Order o1 = new Order(null, Instant.parse("2019-06-20T19:53:07Z"), null);
+        // return ResponseEntity.ok().body(o1);
     }
 
     @GetMapping(value = "/teste")
-    public ResponseEntity<List<Order>> listUsers() {
-        List<Order> lsOrders = _OrderService.findAll();
-        return ResponseEntity.ok().body(lsOrders);
+    public ResponseEntity<List<Category>> listUsers() {
+        List<Category> lsCategories = _CategoryService.findAll();
+        return ResponseEntity.ok().body(lsCategories);
     }
 
     @GetMapping(value = "/{id}")
     public ResponseEntity findById(@PathVariable Long id) {
-        Order obj = _OrderService.findById(id);
+        Category obj = _CategoryService.findById(id);
         return ResponseEntity.ok().body(obj);
     }
 }

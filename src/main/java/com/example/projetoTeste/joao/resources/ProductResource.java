@@ -10,14 +10,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.projetoTeste.joao.entities.Order;
+import com.example.projetoTeste.joao.entities.Product;
 import com.example.projetoTeste.joao.services.OrderService;
+import com.example.projetoTeste.joao.services.ProductService;
 
 @RestController
-@RequestMapping(value = "/orders")
-public class OrderResource {
-  
+@RequestMapping(value = "/products")
+public class ProductResource {
+      
     @Autowired
-    private OrderService _OrderService;
+    private ProductService _ProductService;
     
     @GetMapping
     public void findAll() {
@@ -26,14 +28,14 @@ public class OrderResource {
     }
 
     @GetMapping(value = "/teste")
-    public ResponseEntity<List<Order>> listUsers() {
-        List<Order> lsOrders = _OrderService.findAll();
-        return ResponseEntity.ok().body(lsOrders);
+    public ResponseEntity<List<Product>> listUsers() {
+        List<Product> lsProducts = _ProductService.findAll();
+        return ResponseEntity.ok().body(lsProducts);
     }
 
     @GetMapping(value = "/{id}")
     public ResponseEntity findById(@PathVariable Long id) {
-        Order obj = _OrderService.findById(id);
+        Product obj = _ProductService.findById(id);
         return ResponseEntity.ok().body(obj);
     }
 }
