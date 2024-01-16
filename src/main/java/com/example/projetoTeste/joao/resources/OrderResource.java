@@ -18,13 +18,14 @@ import com.example.projetoTeste.joao.services.UserService;
 @RestController
 @RequestMapping(value = "/orders")
 public class OrderResource {
+  
     @Autowired
     private OrderService _OrderService;
-
+    
     @GetMapping
-    public ResponseEntity<Order> findAll() {
-        Order o1 = new Order(null, Instant.parse("2019-06-20T19:53:07Z"), u1);
-        // return ResponseEntity.ok().body("teste");
+    public void findAll() {
+    //     Order o1 = new Order(null, Instant.parse("2019-06-20T19:53:07Z"), null);
+    //     return ResponseEntity.ok().body(o1);
     }
 
     @GetMapping(value = "/teste")

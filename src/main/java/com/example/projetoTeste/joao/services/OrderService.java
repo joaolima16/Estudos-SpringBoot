@@ -4,12 +4,15 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.example.projetoTeste.joao.Repositories.OrderRepository;
 import com.example.projetoTeste.joao.entities.Order;
 import com.example.projetoTeste.joao.entities.User;
 
+@Service
 public class OrderService {
+
     @Autowired
     private OrderRepository _OrderRepository;
 
